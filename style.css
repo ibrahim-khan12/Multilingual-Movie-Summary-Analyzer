@@ -1,0 +1,93 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+}
+
+.jumbotron {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+.btn-primary {
+    background-color: #4b6cb7;
+    border-color: #4b6cb7;
+}
+
+.btn-primary:hover {
+    background-color: #3a5a96;
+    border-color: #3a5a96;
+}
+
+footer {
+    box-shadow: 0 -2px 4px rgba(0,0,0,.1);
+}
+
+.display-4 {
+    color: #4b6cb7;
+    font-weight: 600;
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Progress bar styling */
+.progress-bar {
+    background-color: #4b6cb7;
+}
+
+/* Chart container */
+.chart-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+/* Audio player styling */
+audio {
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+/* Genre badges */
+.genre-badge {
+    display: inline-block;
+    margin: 3px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #4b6cb7;
+    color: white;
+}

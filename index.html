@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Analysis System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-film"></i> Movie Analysis System
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/process_data">Process Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/train_model">Train Model</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/translate_audio">Generate Audio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/analyze_summary">Analyze Summary</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/statistics">Statistics</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Movie Summary Analysis System</h1>
+            <p class="lead">A comprehensive platform for analyzing movie summaries, predicting genres, and generating translations.</p>
+            <hr class="my-4">
+            <p>This system allows you to process movie plot summaries, train machine learning models, and analyze new movie summaries.</p>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-database"></i> Process Data</h5>
+                        <p class="card-text">Clean and process the raw movie data to prepare it for analysis.</p>
+                        <a href="/process_data" class="btn btn-primary">Start Processing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-brain"></i> Train Model</h5>
+                        <p class="card-text">Train a machine learning model to predict movie genres from summaries.</p>
+                        <a href="/train_model" class="btn btn-primary">Train Model</a>
+                        {% if model_loaded %}
+                            <span class="badge bg-success ms-2">Model Loaded</span>
+                        {% else %}
+                            <span class="badge bg-warning ms-2">No Model Loaded</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-language"></i> Generate Audio</h5>
+                        <p class="card-text">Translate summaries into different languages and generate audio.</p>
+                        <a href="/translate_audio" class="btn btn-primary">Generate Audio</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-search"></i> Analyze Summary</h5>
+                        <p class="card-text">Analyze a movie summary to predict genres and generate translations.</p>
+                        <a href="/analyze_summary" class="btn btn-primary">Analyze Summary</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-bar"></i> Statistics</h5>
+                        <p class="card-text">View statistics and visualizations about the movie dataset.</p>
+                        <a href="/statistics" class="btn btn-primary">View Statistics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">Movie Analysis System &copy; 2023</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
